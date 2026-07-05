@@ -2,7 +2,14 @@
 
 function login() {
     return (
-        <div>Login Page</div>
+        <div className="min-h-screen relative" >
+            <div className="absolute inset-0 bg-cover bg-center"
+            style= {
+                {
+                    backgroundImage: "url('/images/login.jpg')",
+                }
+            }></div>
+        </div>
     );
 }
 
