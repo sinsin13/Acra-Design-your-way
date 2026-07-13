@@ -11,6 +11,7 @@ export const{handlers, signIn, signOut, auth}=NextAuth({
             if(account?.id_token){
                 token.id_token=account.id_token
             }
+            return token
         },
         async session({session, token}){
             session.id_token=token.id_token
