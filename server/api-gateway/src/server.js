@@ -52,4 +52,19 @@ app.use(
   })
 );
 
-
+app.use(
+    "/v1/subscription",
+    authMiddleware,
+    proxy(process.env.SUBSCRIPTION, {
+      ...proxyOptions,
+    })
+  );
+  
+  app.listen(PORT, () => {
+    console.log(`API Gateway is running on port ${PORT}`);
+    console.log(`DESIGN Service is running on port ${process.env.DESIGN}`);
+    console.log(`UPLOAD Service is running on port ${process.env.UPLOAD}`);
+    console.log(
+      `SUBSCRIPTION Service is running on port ${process.env.SUBSCRIPTION}`
+    );
+  });
